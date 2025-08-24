@@ -45,7 +45,7 @@ veterinarioSchema.pre('save', async function(next){
     this.password = await bcrypt.hash(this.password, salt)
 });
 
-veterinarioSchema.comrpobarPassword = async function(passwordFormulario) {
+veterinarioSchema.methods.comprobarPassword = async function(passwordFormulario) {
     return await bcrypt.compare(passwordFormulario, this.password)
 }
 
